@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#0d0f0c",
+              "on-error": "#fff7f6",
+              "tertiary-fixed": "#e5f9e9",
+              "tertiary-fixed-dim": "#d6eadb",
+              "tertiary-container": "#e5f9e9",
+              "tertiary": "#516357",
+              "surface-container-low": "#f3f4ee",
+              "primary-fixed-dim": "#d6d4d3",
+              "background": "#fafaf5",
+              "surface-container": "#ecefe7",
+              "surface-tint": "#5f5e5e",
+              "on-secondary-fixed-variant": "#705900",
+              "surface-variant": "#dee4da",
+              "surface": "#fafaf5",
+              "primary-dim": "#535252",
+              "on-tertiary-container": "#4e6054",
+              "on-primary-container": "#525151",
+              "on-tertiary": "#eafeee",
+              "primary-fixed": "#e4e2e1",
+              "on-secondary-fixed": "#4e3d00",
+              "inverse-primary": "#ffffff",
+              "on-secondary": "#fff8ef",
+              "on-background": "#2e342d",
+              "outline": "#767c74",
+              "inverse-on-surface": "#9c9d99",
+              "surface-bright": "#fafaf5",
+              "outline-variant": "#aeb4aa",
+              "on-primary": "#faf7f6",
+              "on-tertiary-fixed-variant": "#586a5e",
+              "secondary": "#745c00",
+              "primary-container": "#e4e2e1",
+              "error": "#9f403d",
+              "secondary-fixed": "#ffe088",
+              "on-surface": "#2e342d",
+              "surface-container-high": "#e5eae0",
+              "secondary-container": "#ffe088",
+              "on-secondary-container": "#644f00",
+              "secondary-fixed-dim": "#f8d056",
+              "on-tertiary-fixed": "#3c4e42",
+              "primary": "#5f5e5e",
+              "surface-container-highest": "#dee4da",
+              "on-error-container": "#752121",
+              "tertiary-dim": "#46574b",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "surface-dim": "#d5dcd0",
+              "on-primary-fixed": "#3f3f3f",
+              "on-surface-variant": "#5b6159",
+              "secondary-dim": "#665100",
+              "error-container": "#fe8983",
+              "surface-container-lowest": "#ffffff",
+              "error-dim": "#4e0309"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf5;
+            color: #2e342d;
+        }
+        .serif-display {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md transition-colors duration-300">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-semibold tracking-tighter text-stone-800 dark:text-stone-100 uppercase font-noto-serif">MONOLITH</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors font-noto-serif tracking-tight text-sm" href="#">Shop</a>
+<a class="text-stone-900 dark:text-white border-b border-stone-800 dark:border-stone-100 pb-1 font-noto-serif tracking-tight text-sm" href="#">Collections</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors font-noto-serif tracking-tight text-sm" href="#">Story</a>
+</div>
+</div>
+<div class="flex items-center gap-6 text-stone-600 dark:text-stone-300">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-8 max-w-screen-2xl mx-auto">
+<!-- Header & Filter Section -->
+<header class="mb-16">
+<h1 class="serif-display text-5xl md:text-7xl font-light tracking-tight mb-8">Collections</h1>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant/10 pb-8">
+<div class="flex gap-10">
+<button class="text-sm font-medium tracking-[0.1rem] uppercase border-b border-primary pb-1">All Pieces</button>
+<button class="text-sm font-medium tracking-[0.1rem] uppercase text-on-surface-variant hover:text-primary transition-colors">New Arrivals</button>
+<button class="text-sm font-medium tracking-[0.1rem] uppercase text-on-surface-variant hover:text-primary transition-colors">Essentials</button>
+<button class="text-sm font-medium tracking-[0.1rem] uppercase text-on-surface-variant hover:text-primary transition-colors">Collaborations</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs uppercase tracking-widest text-on-surface-variant">Sort By</span>
+<button class="flex items-center gap-2 text-sm font-medium">
+                        Latest
+                        <span class="material-symbols-outlined" style="font-size: 16px;">expand_more</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Product Grid: Asymmetrical Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-24 gap-x-12">
+<!-- Product 1: Large Featured -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-6 relative">
+<img alt="High-fashion editorial portrait of a man in a structured grey wool overcoat, architectural background with dramatic shadows" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxDMC35trgit214lY8QXgI-TmZz-U6fn8NQI045jkEY4s4Bwfv0ipHrS1RBQWyK3yGhN-WjUWGC69NWqv7PCEEXUrpTvUq2vNfUn0sR_i6_Iz5tLPFy9b0d2sCIiDIC2Ih948M9NqMZRYkS_61XKdnEjU12LRUL5VvaJyH2Pl72ggG9sNjDCV3GyJ0epohhHBOjHDrCVdwCdzTfEzGoWAhWK4mZluWY2xDpTFagqCjWtGiFcT4filgc2YdAmP6gu0ixrjzGnukrA"/>
+<div class="absolute top-6 left-6">
+<span class="bg-primary text-on-primary px-3 py-1 text-[10px] uppercase tracking-[0.2rem] font-medium">Limited Edition</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-display text-2xl mb-1">Architectural Overcoat</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest">Virgin Wool Blend</p>
+</div>
+<p class="text-lg font-light text-primary">$840.00</p>
+</div>
+</div>
+<!-- Product 2: Slim Vertical -->
+<div class="md:col-span-4 mt-0 md:mt-24 group cursor-pointer">
+<div class="aspect-[2/3] overflow-hidden bg-surface-container-low mb-6">
+<img alt="Close up of luxury cream cashmere knitwear draped over a minimalist stone plinth, soft natural light" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiypepcUt087KIsF4prsFwkGjPSCU1Tnx8iCbNFi47Qq1PaJDdklp_erA4EZUay3N5w8Z6f2Ihz9B5oyQA9B9WBtVzFRikC9rqX22zU9nis6DbOmlNryq_UhuCwdtx_EtSnElCAMRsaqYMpxxuBfpYPRbf5CHPj262VtrBHlKof4RXMc9XJuuvUBdfd_2Y2yrPG8BTFA4XqXAlp11efU5Us9ImJUnJDNmSEIJb3AzubLii79SYigIcP5llptP3sv4SBfC7Zbtafg"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-display text-xl mb-1">Cashmere Ribbed Scarf</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest">Natural Cream</p>
+</div>
+<p class="text-base font-light text-primary">$220.00</p>
+</div>
+</div>
+<!-- Product 3: Standard Grid -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-6">
+<img alt="Studio shot of high-end olive green tailored trousers, minimalist aesthetic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZwjeRli0qpdYA8uv83Y8M9qbpereITb4-IPJOMzFw4KxS9CAh0zqCFKtcsJBIMYkq2VbrXeoW_avC-VR13r2_hakeuyG_xqLN8V7w4u4pvoZOIOSkb5laRmcdYb-P3f-HlamtaHQ9CwPxZBwi03brVzyJGwHCSSdT7QB8v0OsmguVCgghx-WOt5shd7feZkxBSoRYXTs0kggySNhUfEIOVu7-uQ_1DdjB_5wQG_puZfRClLkXdyMWJ5QGcee40msFu-rvZkViEQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-display text-xl mb-1">Studio Trouser</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest">Earth Tones</p>
+</div>
+<p class="text-base font-light text-primary">$350.00</p>
+</div>
+</div>
+<!-- Product 4: Standard Grid -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container mb-6">
+<img alt="Editorial shot of a woman in a sharp charcoal grey blazer, minimalist studio setting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdOOW86Q0Wv8DEN8r9dFtvOx0m0u1cE5fl-wicvbzXPY2-3t_hPSb7feapUABg4lYRkhcaKWyqnntRMr-XcRaRdKVwHnGzOS4FBnghimgwVkIIaCkHN5zI8bSdCKta5EgskdGGHOBMGrnIQ0CXtFBeT7BGgdk_ohP3nGvMUBHPCt6MZ0agpmYnghauxT3O1eNjMdVjRmHo_JtF-catDaymf2TAyj0sdTd7qBKZMjFvQmulxsZrtHTSbKBJ3c0BanDnWgGF1nvpCw"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-display text-xl mb-1">Monolith Blazer</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest">Charcoal Melange</p>
+</div>
+<p class="text-base font-light text-primary">$590.00</p>
+</div>
+</div>
+<!-- Product 5: Small Accents / Jewelry -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-6">
+<img alt="Minimalist macro photography of a gold signet ring on a marble surface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcyiESs5yv04gMJqv9YPL4eOJ8iStMpZj28OwWlU7762EH2-99r7OUfbkk2P-hY2ORd9DybNjUiFYDokqTaIVRYBiWKmlwL5i1ALDfCY5-1Gv-CPR1JKSMAbepVlFswYQFgs38LDLzk2u37lG97CKsbWLSCiGnqxOT5gHcPllbEabbdh3wSIiiwmuuqGWDW6ox-2s0BWhZuhrSVvfyYCnZ-6Etqfr6CWOsAx7PTj7xTzl79S0ZbxrSRdrBuV2PNP-y3n-REaEhng"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-display text-xl mb-1">Curated Signet</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest">18k Gold Leaf</p>
+</div>
+<p class="text-base font-light text-secondary">$1,100.00</p>
+</div>
+</div>
+<!-- Full Width Statement Image -->
+<div class="md:col-span-12 relative h-[700px] overflow-hidden group mb-12">
+<img alt="Atmospheric fashion campaign image featuring models in a stark, architectural concrete space with long shadows" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAExskuCjNTLcQOcqylvjrM4hxk3RJvXUjOVk1IKXGRMLXHdTxq0aszOVBJ7OYXJHod7O-E5vsqDaYVTrPlKiC9UMxCYnh9CbweZeZldf9NbjjEoqSqbKfC9a5shV8q3RBf2WFxG0-aIUBwwqRUFz06-DH7oRaNBpDVAn5lQHofVN0sesnm2LKDAXgSNch5wFc1mHGwRB-6FoN_qGzfoWhA76T-r0NB5HoahF9dZWIiydX0SRf3pPFtehIcUZCyO6jie3JbXG69hA"/>
+<div class="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-center px-6">
+<span class="text-white text-xs uppercase tracking-[0.5rem] mb-6">Autumn Winter 2024</span>
+<h2 class="serif-display text-4xl md:text-6xl text-white max-w-2xl leading-tight">The Art of Stillness</h2>
+<button class="mt-8 px-10 py-4 bg-white text-stone-900 text-xs uppercase tracking-widest hover:bg-stone-100 transition-colors">Discover the Lookbook</button>
+</div>
+</div>
+<!-- Product 6 & 7: Secondary Grid -->
+<div class="md:col-span-6 group cursor-pointer">
+<div class="aspect-square overflow-hidden bg-surface-container mb-6">
+<img alt="Detailed shot of a luxury forest green leather tote bag against a minimalist white background" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeOBhEtadbiTqL0VfBI4i8uaVDTdfcLd48yjq-cP_j8l9mzdKh94CEKIPIPmgT_onCkSyPTb1FB2xV9b8bSqTI6B9L19CZffGNtiDrNCPx4wbLlelGjE0TJ64i58lBC3QuZDl-_h6hDalB_6vonZRpauZbrcQK68TNAxEtDezvbpdbzq2Vm_1slEedU5sS6Y5Vrc73p6HYTcG8Wsv65N3q2db90IMXZjgeNHaISrufMis74GKLcM7n1Yy378atPXRaHpfI7TlEkQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-display text-xl mb-1">Portfolio Tote</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest">Forest Green Leather</p>
+</div>
+<p class="text-base font-light text-primary">$475.00</p>
+</div>
+</div>
+<div class="md:col-span-6 group cursor-pointer">
+<div class="aspect-square overflow-hidden bg-surface-container mb-6">
+<img alt="Symmetrical editorial shot of white leather sneakers on a stone staircase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYx3Pdks_us8MKq_4pDQwV2e6PFJ9sAnrdR-2I4qae1wx0cfO_in2fvpznCyB3aEUAoFG8FeA6F5UAEENr9163sii1lwSpUgh1lBbmOG0r9RZ2dfaI2NAN5KrbNB8-gkTg7CTZIqmyUMN0cSV3mdRbD1gh-BmEqyL7z0afzX7wN1fbN1AKcbrQS64IfQ2VAnU4dOVabSGngnx0dj8XIZ0KB935pALjR7soy-1CsWRhTyfbG6M3PtiCNAhRDq5tA08J6FTnokaQuw"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="serif-display text-xl mb-1">Edition 01 Sneaker</h3>
+<p class="text-sm text-on-surface-variant uppercase tracking-widest">Optic White Calfskin</p>
+</div>
+<p class="text-base font-light text-primary">$380.00</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-20 px-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-6">
+<span class="text-lg font-bold text-stone-800 dark:text-stone-200 uppercase font-noto-serif">MONOLITH</span>
+<p class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-600 dark:text-stone-400">© 2024 Monolith Editorial. Crafted Locally.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface mb-2">Connect</h4>
+<a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Newsletter</a>
+<a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Instagram</a>
+<a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Journal</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface mb-2">Support</h4>
+<a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Privacy</a>
+<a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Terms</a>
+<a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Stockists</a>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface mb-2">Manifesto</h4>
+<p class="text-xs leading-loose text-on-surface-variant italic font-light">Dedicated to the pursuit of intentional minimalism and the beauty of local craft. Every piece is a dialogue between form and function.</p>
+</div>
+</div>
+</footer>
+</body></html>
