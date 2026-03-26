@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MONOLITH | High-End Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#0d0f0c",
+              "on-error": "#fff7f6",
+              "tertiary-fixed": "#e5f9e9",
+              "tertiary-fixed-dim": "#d6eadb",
+              "tertiary-container": "#e5f9e9",
+              "tertiary": "#516357",
+              "surface-container-low": "#f3f4ee",
+              "primary-fixed-dim": "#d6d4d3",
+              "background": "#fafaf5",
+              "surface-container": "#ecefe7",
+              "surface-tint": "#5f5e5e",
+              "on-secondary-fixed-variant": "#705900",
+              "surface-variant": "#dee4da",
+              "surface": "#fafaf5",
+              "primary-dim": "#535252",
+              "on-tertiary-container": "#4e6054",
+              "on-primary-container": "#525151",
+              "on-tertiary": "#eafeee",
+              "primary-fixed": "#e4e2e1",
+              "on-secondary-fixed": "#4e3d00",
+              "inverse-primary": "#ffffff",
+              "on-secondary": "#fff8ef",
+              "on-background": "#2e342d",
+              "outline": "#767c74",
+              "inverse-on-surface": "#9c9d99",
+              "surface-bright": "#fafaf5",
+              "outline-variant": "#aeb4aa",
+              "on-primary": "#faf7f6",
+              "on-tertiary-fixed-variant": "#586a5e",
+              "secondary": "#745c00",
+              "primary-container": "#e4e2e1",
+              "error": "#9f403d",
+              "secondary-fixed": "#ffe088",
+              "on-surface": "#2e342d",
+              "surface-container-high": "#e5eae0",
+              "secondary-container": "#ffe088",
+              "on-secondary-container": "#644f00",
+              "secondary-fixed-dim": "#f8d056",
+              "on-tertiary-fixed": "#3c4e42",
+              "primary": "#5f5e5e",
+              "surface-container-highest": "#dee4da",
+              "on-error-container": "#752121",
+              "tertiary-dim": "#46574b",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "surface-dim": "#d5dcd0",
+              "on-primary-fixed": "#3f3f3f",
+              "on-surface-variant": "#5b6159",
+              "secondary-dim": "#665100",
+              "error-container": "#fe8983",
+              "surface-container-lowest": "#ffffff",
+              "error-dim": "#4e0309"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf5;
+            color: #2e342d;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+        .vertical-rl {
+            writing-mode: vertical-rl;
+        }
+    
+        .dark body { background-color: #111211 !important; color: #e0e0dc !important; }
+        .dark .bg-surface { background-color: #111211 !important; }
+        .dark .bg-background { background-color: #111211 !important; }
+        .dark .bg-surface-container { background-color: #1a1c1a !important; }
+        .dark .bg-surface-container-low { background-color: #151715 !important; }
+        .dark .bg-surface-container-high { background-color: #1f211f !important; }
+        .dark .text-on-surface { color: #e0e0dc !important; }
+        .dark .text-on-background { color: #e0e0dc !important; }
+        .dark .text-on-surface-variant { color: #a0a59e !important; }
+        .dark .text-primary { color: #c4c3c3 !important; }
+        .dark .border-outline-variant\/20 { border-color: rgba(100,106,98,0.2) !important; }
+    </style>
+<style id="page-transition">body { opacity: 0; } main { transform: translateY(15px); }</style>
+<link rel="stylesheet" href="responsive.css"/>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container overflow-y-scroll dark:bg-[#111211] dark:text-stone-200">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md transition-colors duration-300">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto relative">
+<a class="text-2xl font-semibold tracking-tighter text-stone-800 dark:text-stone-100 uppercase font-headline" href="index.html">MONOLITH</a>
+<div class="hidden md:flex items-center justify-center gap-8 font-noto-serif tracking-tight absolute left-1/2 -translate-x-1/2">
+<a class="text-stone-900 dark:text-white font-medium transition-colors relative" href="index.html">Home</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="catalog.html">Collections</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="story.html">Story</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="visit.html">Visit Us</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="theme-toggle material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300">dark_mode</button>
+        <button class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300" data-icon="search">search</button>
+<button class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300" data-icon="shopping_bag">shopping_bag</button>
+<!-- Hamburger Menu Icon -->
+<button id="mobile-menu-btn" class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300 md:hidden block" data-icon="menu">menu</button>
+</div>
+</div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-stone-50 dark:bg-stone-950 z-[60] flex flex-col justify-center items-center translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+    <button id="close-menu-btn" class="absolute top-8 right-8 material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity text-3xl" data-icon="close">close</button>
+    <div class="flex flex-col items-center gap-10 font-noto-serif text-3xl tracking-widest uppercase">
+        <a class="text-stone-900 dark:text-stone-100 font-medium transition-colors" href="index.html">Home</a>
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="catalog.html">Collections</a>
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="story.html">Story</a>
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="visit.html">Visit Us</a>
+        </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mBtn = document.getElementById('mobile-menu-btn');
+        const cBtn = document.getElementById('close-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if(mBtn && cBtn && menu) {
+            mBtn.addEventListener('click', () => menu.classList.remove('translate-x-full'));
+            cBtn.addEventListener('click', () => menu.classList.add('translate-x-full'));
+        }
+    });
+</script>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center overflow-hidden bg-surface-container">
+<div class="absolute inset-0 z-0">
+<img alt="High fashion editorial model" class="w-full h-full object-cover grayscale opacity-90 scale-[1.05] origin-center" data-parallax="0.15" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=2400&q=100&fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-20 max-w-4xl">
+<span class="label-md uppercase tracking-[0.2em] text-on-primary mb-6 block font-label opacity-80">Season 26—Curated</span>
+<h1 class="text-5xl md:text-8xl text-on-primary font-headline leading-tight mb-12 tracking-tighter">
+                Silence is the <br/>New <span class="italic">Statement.</span>
+</h1>
+<div class="flex gap-4">
+<a href="catalog.html" class="bg-primary text-on-primary px-10 py-5 text-sm uppercase tracking-widest font-label hover:bg-primary-dim transition-colors duration-300 inline-block">
+                    View Collection
+                </a>
+</div>
+</div>
+</section>
+<!-- Collection Showcase (Redesigned Editorial Layout) -->
+<section class="py-32 md:py-48 px-8 max-w-[1800px] mx-auto bg-surface dark:bg-[#111211] overflow-hidden">
+<div class="relative grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-y-48">
+<!-- Headline & Intro Section -->
+<div class="col-span-1 md:col-span-12 lg:col-span-11 lg:col-start-2 mb-12 flex flex-col lg:flex-row items-start lg:items-baseline gap-8 lg:gap-24">
+<div class="relative">
+<h2 class="text-6xl md:text-[10rem] font-headline tracking-tighter leading-none">The Collection</h2>
+<span class="hidden md:block absolute -left-24 top-1/2 -translate-y-1/2 vertical-rl rotate-180 text-xl font-label tracking-[0.4em] text-stone-300 uppercase">Permanent</span>
+</div>
+<div class="max-w-md">
+<p class="text-on-surface-variant font-body leading-relaxed text-xl mb-6">A selection of core pieces designed for longevity, crafted from ethically sourced Belgian linen and organic Japanese cotton.</p>
+<a class="text-xs font-label uppercase tracking-[0.3em] border-b border-outline-variant pb-1 hover:border-primary transition-colors inline-block" href="catalog.html">Browse All Items</a>
+</div>
+</div>
+
+</section>
+<!-- Brand Highlight -->
+<section class="py-40 bg-surface-container-low overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="aspect-[4/5] md:aspect-square bg-surface-variant overflow-hidden">
+<img alt="Workshop" class="w-full h-full object-cover" data-alt="Inside a sun-drenched artisan workshop with vintage sewing machines and rolls of high-quality fabrics, soft atmospheric dust motes in the light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPkDFZwg_FqBAVQ9SC9ItmgYfHhB6F03W0vbyhOqKEst72m1yACLGFW3OGEalrfDv11c6ezWLTqeQY0q5n62kXlQFDiiY7nf4Dq8FN9Xz_kb6WKvhjcZ8jGjboQ1B1LgV3N_PZdPVvDxXhFSVZt9K12ICN8L74mSJb-JSV_Vn6-DA9ZhOm4QScqTFH7qYKrzMfGwFRlsRHp6OIzJfvQbdVGuWCKwaE4mSm0rUKf8225po0OddaELbEbtkdWkZiPoKI5FQ10PSQ0A"/>
+</div>
+<div class="absolute -bottom-10 -right-10 hidden md:block w-48 h-64 lg:w-64 lg:h-80 bg-surface dark:bg-[#111211] shadow-xl p-4 lg:p-6 border border-outline-variant/10">
+<img alt="Fabric Detail" class="w-full h-full object-cover" data-alt="Macro photography of raw woven linen texture showing intricate details of the fibers and natural variations in color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApn3A_V67K1cWqO92rfOUHc5LRAPUbQKtbrFmDUp5CO56nPZBB_IVbRlY0EeHg7gEYLN7UueYtHhqwLiJ1jjbdrbw1O9L49lNFYfIMJXhi9FRAiYkQd55C0R5kbDBLOcICHkKfwJGRgYgM9GuNUxAt_roguXxlP9iz8qBOl_QA4ZT3q2F8q6ltXbmii0_lNJYB9X24O1bC1vQAJTjUdZj2tqI8MQX2PDBTa3ZbQex8iJTj84BrqdLRUBjGozQmvI2myRkWq0cJ1A"/>
+</div>
+</div>
+<div class="lg:pl-12">
+<span class="label-md uppercase tracking-[0.3em] text-secondary mb-8 block font-label">Our Heritage</span>
+<h2 class="text-4xl md:text-6xl font-headline mb-10 leading-[1.1]">Built to <span class="italic">Last</span>, Crafted to <span class="italic">Breathe.</span></h2>
+<p class="text-on-surface-variant font-body text-xl leading-relaxed mb-12">
+                    Monolith was founded on the belief that clothing should be an architectural extension of the wearer. Every seam is considered, every fabric hand-selected. We don't follow trends; we define a timeless silhouette.
+                </p>
+<div class="space-y-6">
+<div class="flex items-center gap-6 border-b border-outline-variant/20 pb-6">
+<span class="text-3xl font-headline text-primary-dim">01</span>
+<div>
+<h4 class="font-bold uppercase tracking-tight text-xs">Sourcing</h4>
+<p class="text-sm text-on-surface-variant">Traceable raw materials from regenerative farms.</p>
+</div>
+</div>
+<div class="flex items-center gap-6 border-b border-outline-variant/20 pb-6">
+<span class="text-3xl font-headline text-primary-dim">02</span>
+<div>
+<h4 class="font-bold uppercase tracking-tight text-xs">Production</h4>
+<p class="text-sm text-on-surface-variant">Hand-finished in our small-batch local atelier.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Signup -->
+<section class="py-32 px-8 bg-surface dark:bg-[#111211]">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-headline mb-4">Join the Collective</h2>
+<p class="text-on-surface-variant mb-12 font-body">Subscribers receive first access to limited releases and private editorial journals.</p>
+<form class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-6 px-2 text-sm font-label focus:border-primary placeholder:text-stone-400 transition-all uppercase tracking-widest" placeholder="ENTER YOUR EMAIL" style="box-shadow: none !important; outline: none !important;" required type="email"/>
+<button class="absolute right-0 bottom-6 text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" type="submit">
+                    Subscribe
+                </button>
+</form>
+<p class="mt-8 text-[10px] text-stone-400 uppercase tracking-widest font-label">By subscribing, you agree to our privacy policy.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-20 px-12 tonal-shift">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="text-lg font-bold text-stone-800 dark:text-stone-200 block mb-6">MONOLITH</span>
+<p class="text-xs text-stone-500 uppercase leading-relaxed tracking-widest">The Silent Curator of Modern Wardrobes.</p>
+</div>
+<div>
+<h5 class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-900 dark:text-white font-medium mb-6">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="catalog.html">Shop</a></li>
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="catalog.html">Collections</a></li>
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Journal</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-900 dark:text-white font-medium mb-6">Information</h5>
+<ul class="space-y-4">
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Privacy</a></li>
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Terms</a></li>
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Stockists</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-900 dark:text-white font-medium mb-6">Connect</h5>
+<ul class="space-y-4">
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Instagram</a></li>
+<li><a class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Newsletter</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-12 border-t border-stone-200 dark:border-stone-800 flex justify-between items-center max-w-screen-2xl mx-auto">
+<span class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500">© 2026 Monolith Editorial. Crafted Locally.</span>
+<div class="flex gap-4">
+<span class="w-8 h-[1px] bg-stone-300"></span>
+</div>
+</div>
+</footer>
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+<script src="luxury_engine.js"></script>
+</body></html>
