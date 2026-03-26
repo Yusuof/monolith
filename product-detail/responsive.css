@@ -1,0 +1,197 @@
+/* ================================================
+   MONOLITH — Responsive Overrides
+   Ensures flawless rendering across all screen sizes
+   ================================================ */
+
+/* ---- Global: Prevent horizontal overflow ---- */
+html {
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none;             /* Chrome/Safari/Opera */
+}
+
+/* Clip all page content — prevents any absolute elements from creating white space */
+main {
+    overflow-x: hidden;
+}
+footer {
+    overflow-x: hidden;
+}
+
+img, video, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---- Mobile: Up to 639px ---- */
+@media (max-width: 639px) {
+    /* Hero headline scales down gracefully */
+    .hero-headline, h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    /* Footer: stack into 2 columns instead of 1 */
+    footer .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    footer .md\:col-span-1:first-child {
+        grid-column: span 2 !important;
+    }
+
+    /* Footer bottom bar: stack on tiny screens */
+    footer > div:last-child {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+
+    /* Reduce section padding on mobile */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Prevent "The Collection" from being too huge */
+    .font-headline {
+        word-break: break-word;
+    }
+
+    /* Tighten spacing between sections */
+    .py-32 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+    .py-40 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+
+    /* Newsletter section: full width */
+    .max-w-3xl { max-width: 100% !important; }
+
+    /* Visit page hero: responsive height */
+    section[class*="h-[618px]"] {
+        height: 50vh !important;
+        min-height: 300px !important;
+    }
+}
+
+/* ---- Tablet: 640px - 1023px ---- */
+@media (min-width: 640px) and (max-width: 1023px) {
+    /* "The Collection" — scale to fit tablets */
+    .text-\[10rem\], .md\:text-\[10rem\] {
+        font-size: 5rem !important;
+        line-height: 1 !important;
+    }
+
+    /* Footer: 2×2 grid for tablets */
+    footer .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2.5rem !important;
+    }
+    footer .md\:col-span-1:first-child {
+        grid-column: span 2 !important;
+    }
+
+    /* Brand Highlight section: stack on tablets */
+    .lg\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Visit page hero: responsive height */
+    section[class*="h-[618px]"] {
+        height: 45vh !important;
+        min-height: 350px !important;
+    }
+
+    /* Give content some breathing room */
+    .max-w-\[1800px\] {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    /* Story bento grid: 2 columns instead of 4 */
+    .md\:col-span-2 {
+        grid-column: span 1 !important;
+    }
+    .md\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ---- Small Desktop: 1024px - 1279px ---- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* Slightly reduce "The Collection" for smaller desktops */
+    .md\:text-\[10rem\] {
+        font-size: 7rem !important;
+    }
+
+    /* Ensure the overlapping image doesn't get clipped */
+    .absolute.-bottom-10.-right-10 {
+        right: -0.5rem !important;
+        bottom: -0.5rem !important;
+    }
+}
+
+/* ---- Ultrawide: 1920px+ ---- */
+@media (min-width: 1920px) {
+    /* Center content with reasonable max-widths */
+    .max-w-screen-2xl {
+        max-width: 1536px;
+    }
+
+    /* Give hero more left padding on ultrawide */
+    .relative.z-10.px-8 {
+        padding-left: 5rem;
+    }
+
+    /* Larger newsletter area */
+    .max-w-3xl {
+        max-width: 56rem;
+    }
+}
+
+/* ---- Fix: Visit page hero fixed height ---- */
+@media (max-width: 1023px) {
+    section.relative.w-full[class*="h-[618px]"] {
+        height: auto !important;
+        min-height: 40vh !important;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* ---- Fix: Navbar consistent across all sizes ---- */
+nav.fixed {
+    box-sizing: border-box;
+}
+
+/* ---- Fix: All form inputs — kill browser defaults ---- */
+input:focus, textarea:focus, select:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* ---- Fix: Story page "Newsletter" link replaced by input ---- */
+@media (max-width: 639px) {
+    footer .grid > div {
+        min-width: 0;
+    }
+}
+
+/* ---- Smooth font scaling for all headings ---- */
+h1 { font-size: clamp(2rem, 5vw + 1rem, 6rem); }
+h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 4rem); }
+
+/* ---- Fix: Product page gallery images ---- */
+@media (max-width: 639px) {
+    .grid.grid-cols-2 img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+}

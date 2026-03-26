@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MONOLITH | Single Piece</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        safelist: ['outline', 'outline-1', 'outline-primary', 'active', 'bg-primary', 'text-on-primary', 'bg-stone-800', 'group-hover:scale-105', 'duration-700', 'transition-transform'],
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#0d0f0c","on-error": "#fff7f6","tertiary-fixed": "#e5f9e9",
+              "tertiary-fixed-dim": "#d6eadb","tertiary-container": "#e5f9e9","tertiary": "#516357",
+              "surface-container-low": "#f3f4ee","primary-fixed-dim": "#d6d4d3","background": "#fafaf5",
+              "surface-container": "#ecefe7","surface-tint": "#5f5e5e","on-secondary-fixed-variant": "#705900",
+              "surface-variant": "#dee4da","surface": "#fafaf5","primary-dim": "#535252",
+              "on-tertiary-container": "#4e6054","on-primary-container": "#525151","on-tertiary": "#eafeee",
+              "primary-fixed": "#e4e2e1","on-secondary-fixed": "#4e3d00","inverse-primary": "#ffffff",
+              "on-secondary": "#fff8ef","on-background": "#2e342d","outline": "#767c74",
+              "inverse-on-surface": "#9c9d99","surface-bright": "#fafaf5","outline-variant": "#aeb4aa",
+              "on-primary": "#faf7f6","on-tertiary-fixed-variant": "#586a5e","secondary": "#745c00",
+              "primary-container": "#e4e2e1","error": "#9f403d","secondary-fixed": "#ffe088",
+              "on-surface": "#2e342d","surface-container-high": "#e5eae0","secondary-container": "#ffe088",
+              "on-secondary-container": "#644f00","secondary-fixed-dim": "#f8d056","on-tertiary-fixed": "#3c4e42",
+              "primary": "#5f5e5e","surface-container-highest": "#dee4da","on-error-container": "#752121",
+              "tertiary-dim": "#46574b","on-primary-fixed-variant": "#5c5b5b","surface-dim": "#d5dcd0",
+              "on-primary-fixed": "#3f3f3f","on-surface-variant": "#5b6159","secondary-dim": "#665100",
+              "error-container": "#fe8983","surface-container-lowest": "#ffffff","error-dim": "#4e0309"
+            },
+            fontFamily: { "headline": ["Noto Serif"], "body": ["Inter"], "label": ["Inter"] },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    body { font-family: 'Inter', sans-serif; background-color: #fafaf5; color: #2e342d; }
+    h1, h2, h3, .font-serif { font-family: 'Noto Serif', serif; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .dark body { background-color: #111211 !important; color: #e0e0dc !important; }
+        .dark .bg-surface { background-color: #111211 !important; }
+        .dark .bg-background { background-color: #111211 !important; }
+        .dark .bg-surface-container { background-color: #1a1c1a !important; }
+        .dark .bg-surface-container-low { background-color: #151715 !important; }
+        .dark .bg-surface-container-high { background-color: #1f211f !important; }
+        .dark .text-on-surface { color: #e0e0dc !important; }
+        .dark .text-on-background { color: #e0e0dc !important; }
+        .dark .text-on-surface-variant { color: #a0a59e !important; }
+        .dark .text-primary { color: #c4c3c3 !important; }
+        .dark .border-outline-variant\/20 { border-color: rgba(100,106,98,0.2) !important; }
+    </style>
+<style id="page-transition">body { opacity: 0; } main { transform: translateY(15px); }</style>
+<link rel="stylesheet" href="responsive.css"/>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container min-h-screen flex flex-col overflow-y-scroll dark:bg-[#111211] dark:text-stone-200">
+<!-- TopNavBar (Shared) -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md transition-colors duration-300">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto relative">
+<a class="text-2xl font-semibold tracking-tighter text-stone-800 dark:text-stone-100 uppercase font-headline" href="index.html">MONOLITH</a>
+<div class="hidden md:flex items-center justify-center gap-8 font-noto-serif tracking-tight absolute left-1/2 -translate-x-1/2">
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="index.html">Home</a>
+<a class="text-stone-900 dark:text-white font-medium transition-colors relative" href="catalog.html">Collections</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="story.html">Story</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="visit.html">Visit Us</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="theme-toggle material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300">dark_mode</button>
+        <button class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300" data-icon="search">search</button>
+<button class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300" data-icon="shopping_bag">shopping_bag</button>
+<button id="mobile-menu-btn" class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300 md:hidden block" data-icon="menu">menu</button>
+</div>
+</div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-stone-50 dark:bg-stone-950 z-[60] flex flex-col justify-center items-center translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+    <button id="close-menu-btn" class="absolute top-8 right-8 material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity text-3xl" data-icon="close">close</button>
+    <div class="flex flex-col items-center gap-10 font-noto-serif text-3xl tracking-widest uppercase">
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="index.html">Home</a>
+        <a class="text-stone-900 dark:text-stone-100 font-medium transition-colors" href="catalog.html">Collections</a>
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="story.html">Story</a>
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="visit.html">Visit Us</a>
+        </div>
+</div>
+
+<!-- Main Content Area -->
+<main class="pt-24 md:pt-32 pb-16 md:pb-24 max-w-screen-2xl mx-auto px-4 md:px-8 flex-grow" id="product-root">
+    <!-- Breadcrumbs -->
+    <nav class="mb-6 md:mb-12">
+        <ol class="flex space-x-4 text-[10px] uppercase tracking-widest text-outline">
+    <li><a class="hover:text-primary transition-colors" href="catalog.html">Collections</a></li>
+    <li>/</li>
+    <li><a id="bc-category" class="hover:text-primary transition-colors" href="catalog.html">Collection</a></li>
+    <li>/</li>
+    <li id="bc-name"><span class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-500">© 2026 Monolith Editorial. Crafted Locally.</span></li>
+    </ol>
+    </nav>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <!-- Gallery Section -->
+        <div class="md:col-span-1 lg:col-span-7 flex flex-col lg:flex-row-reverse gap-4">
+            <div class="flex-1">
+                <div class="aspect-[3/4] lg:aspect-[4/5] bg-surface-container overflow-hidden max-h-[60vh] md:max-h-none">
+                    <img id="p-main-img" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="" alt=""/>
+                </div>
+            </div>
+            <div id="p-thumbs" class="flex lg:flex-col gap-2 lg:gap-4 overflow-x-auto lg:overflow-y-visible w-full lg:w-24 shrink-0 pb-2 lg:pb-0">
+                <!-- Thumbs -->
+            </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="md:col-span-1 lg:col-span-5 md:sticky md:top-24 lg:top-32">
+            <div class="space-y-6 md:space-y-10">
+                <header>
+                    <span id="p-tag" class="inline-block bg-tertiary-container/30 px-3 py-1 text-[10px] font-medium tracking-[0.2em] text-on-tertiary-container uppercase mb-6">Series 01</span>
+                    <h1 id="p-name" class="text-2xl md:text-4xl lg:text-5xl font-headline font-bold text-on-background leading-tight">...</h1>
+                    <p id="p-price" class="text-xl font-body mt-4 text-primary">$0.00</p>
+                </header>
+                <div class="space-y-6">
+                    <p id="p-desc" class="text-on-surface-variant font-light leading-relaxed text-base md:text-lg"></p>
+                    <p id="p-details" class="text-on-surface-variant/80 text-sm leading-relaxed"></p>
+                </div>
+
+                <div class="space-y-4 md:space-y-8">
+                    <div>
+                        <div class="flex justify-between items-center mb-4 text-[10px] font-bold tracking-[0.1em] uppercase">
+                            <label>Select Size</label>
+                            <button id="size-guide-btn" class="text-secondary underline underline-offset-4">Size Guide</button>
+                        </div>
+                        <div id="p-sizes" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <button id="p-add-btn" class="w-full bg-primary text-on-primary py-3 md:py-5 text-[10px] md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase transition-all hover:bg-stone-800">
+                            Add to Bag
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pt-10 border-t border-outline-variant/10">
+                    <div class="flex items-center gap-4 text-on-surface mb-4">
+                        <span class="material-symbols-outlined text-xl">dry_cleaning</span>
+                        <span class="text-[10px] font-bold tracking-[0.1em] uppercase">Care &amp; Composition</span>
+                    </div>
+                    <ul id="p-care" class="space-y-2 text-sm text-on-surface-variant font-light"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="mt-16 md:mt-32">
+        <div class="flex justify-between items-end mb-8 md:mb-12">
+            <h2 class="font-headline text-lg md:text-2xl tracking-tight">Complete the Silhouette</h2>
+            <div class="flex gap-2 md:hidden">
+                <button id="p-prev" class="p-1.5 border border-outline-variant/20 hover:border-primary transition-colors"><span class="material-symbols-outlined text-sm">west</span></button>
+                <button id="p-next" class="p-1.5 border border-outline-variant/20 hover:border-primary transition-colors"><span class="material-symbols-outlined text-sm">east</span></button>
+            </div>
+        </div>
+        <div class="relative overflow-hidden">
+            <div id="p-related" class="flex transition-transform duration-500 ease-out md:gap-8 md:overflow-x-auto md:pb-8"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-20 px-12 tonal-shift border-t border-stone-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="text-lg font-bold text-stone-800 dark:text-stone-200 block mb-6">MONOLITH</span>
+<p class="text-[10px] text-stone-500 uppercase leading-relaxed tracking-widest">The Silent Curator of Modern Wardrobes.</p>
+</div>
+<div>
+<h5 class="text-[10px] uppercase text-stone-900 dark:text-white font-bold mb-6 tracking-widest">Navigation</h5>
+<ul class="space-y-4 text-[10px] uppercase tracking-widest text-stone-500">
+
+<li><a class="hover:text-stone-800 transition-colors" href="catalog.html">Collections</a></li>
+<li><a class="hover:text-stone-800 transition-colors" href="story.html">Story</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[10px] uppercase text-stone-900 dark:text-white font-bold mb-6 tracking-widest">Legal</h5>
+<ul class="space-y-4 text-[10px] uppercase tracking-widest text-stone-500">
+<li><a class="hover:text-stone-800 transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-stone-800 transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[10px] uppercase text-stone-900 dark:text-white font-bold mb-6 tracking-widest">Social</h5>
+<ul class="space-y-4 text-[10px] uppercase tracking-widest text-stone-500">
+<li><a class="hover:text-stone-800 transition-colors" href="#">Instagram</a></li>
+<li><a class="hover:text-stone-800 transition-colors" href="#">Newsletter</a></li>
+</ul>
+</div>
+</div>
+</footer>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. DATA RETRIEVAL
+    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+    const pid = hashParams.get('id');
+    const product = pid ? getProductById(pid) : getProductById('architectural-overcoat');
+
+    if (!product) {
+        document.getElementById('product-root').innerHTML = `
+            <div class="py-48 text-center">
+                <h1 class="font-headline text-4xl mb-4">Edition Unavailable</h1>
+                <p class="mb-8 text-on-surface-variant">The specific artisan piece you requested could not be located in our current collection.</p>
+                <a href="catalog.html" class="bg-primary text-on-primary px-10 py-5 text-xs font-bold uppercase tracking-widest hover:bg-stone-800 transition-all">View All Pieces</a>
+            </div>
+        `;
+        return;
+    }
+
+    // 2. POPULATION
+    try {
+        document.title = `MONOLITH | ${product.name}`;
+        document.getElementById('bc-name').textContent = product.name;
+        document.getElementById('bc-category').textContent = product.category;
+        document.getElementById('p-name').textContent = product.name;
+        document.getElementById('p-price').textContent = `$${product.price.toFixed(2)}`;
+        document.getElementById('p-desc').textContent = product.description;
+        document.getElementById('p-details').textContent = product.details;
+        document.getElementById('p-tag').textContent = product.tag || (product.isNew ? 'New Arrival' : 'Collection 01');
+
+        const mainImg = document.getElementById('p-main-img');
+        mainImg.src = product.image;
+        mainImg.alt = product.name;
+
+        const thumbBox = document.getElementById('p-thumbs');
+        thumbBox.innerHTML = `
+            <div class="p-thumb shrink-0 w-24 md:w-auto aspect-[4/5] bg-surface-container cursor-pointer outline outline-1 outline-primary active">
+                <img class="w-full h-full object-cover" src="${product.image}"/>
+            </div>
+        `;
+        if (product.gallery && product.gallery.length > 0) {
+            product.gallery.forEach(url => {
+                const wrap = document.createElement('div');
+                wrap.className = 'p-thumb shrink-0 w-24 md:w-auto aspect-[4/5] bg-surface-container cursor-pointer';
+                wrap.innerHTML = `<img class="w-full h-full object-cover" src="${url}"/>`;
+                thumbBox.appendChild(wrap);
+            });
+        }
+
+        const sizeBox = document.getElementById('p-sizes');
+        if (product.sizes) {
+            sizeBox.innerHTML = product.sizes.map((s, i) => `
+                <button class="p-size py-2 px-3 text-[10px] md:text-xs tracking-widest border border-outline-variant/20 hover:border-primary transition-all ${i === 0 ? 'bg-primary text-on-primary border-primary' : ''}" data-size="${s}">${s}</button>
+            `).join('');
+        }
+
+        const careBox = document.getElementById('p-care');
+        if (product.care) {
+            careBox.innerHTML = product.care.map(c => `<li>${c}</li>`).join('');
+        }
+
+        const relateBox = document.getElementById('p-related');
+        const related = PRODUCTS.filter(p => p.id !== product.id).sort(() => Math.random() - 0.5).slice(0, 4);
+        relateBox.innerHTML = related.map(p => `
+            <a href="product.html#id=${p.id}" class="w-full flex-shrink-0 md:w-auto md:min-w-[40%] lg:min-w-[280px] md:flex-none lg:flex-1 group">
+                <div class="aspect-[3/4] md:aspect-[4/5] bg-surface-container mb-3 md:mb-4 overflow-hidden">
+                    <img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" src="${p.image}"/>
+                </div>
+                <h4 class="text-sm font-medium">${p.name}</h4>
+                <p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">$${p.price.toFixed(2)}</p>
+            </a>
+        `).join('');
+
+        // Carousel logic: mobile only — one card at a time, loop
+        let relIdx = 0;
+        const relCards = relateBox.children;
+        const totalCards = relCards.length;
+        const isMobile = () => window.innerWidth < 768;
+        function updateCarousel() {
+            if (isMobile()) {
+                relateBox.style.transform = `translateX(-${relIdx * 100}%)`;
+            } else {
+                relateBox.style.transform = 'none';
+                relIdx = 0;
+            }
+        }
+        document.getElementById('p-next').addEventListener('click', () => {
+            if (!isMobile()) return;
+            relIdx = (relIdx + 1) % totalCards;
+            updateCarousel();
+        });
+        document.getElementById('p-prev').addEventListener('click', () => {
+            if (!isMobile()) return;
+            relIdx = (relIdx - 1 + totalCards) % totalCards;
+            updateCarousel();
+        });
+        window.addEventListener('resize', updateCarousel);
+        updateCarousel();
+
+        initInteractivity(product);
+    } catch (e) { console.error("Population error:", e); }
+});
+
+function initInteractivity(product) {
+    // Thumbs
+    const mainImg = document.getElementById('p-main-img');
+    const thumbs = document.querySelectorAll('.p-thumb');
+    thumbs.forEach(t => t.addEventListener('click', () => {
+        const img = t.querySelector('img');
+        if (img && mainImg) mainImg.src = img.src;
+        thumbs.forEach(o => o.classList.remove('outline', 'outline-1', 'outline-primary', 'active'));
+        t.classList.add('outline', 'outline-1', 'outline-primary', 'active');
+    }));
+
+    // Sizes
+    let currentSize = product.sizes ? product.sizes[0] : 'One Size';
+    const sBtns = document.querySelectorAll('.p-size');
+    sBtns.forEach(b => b.addEventListener('click', () => {
+        sBtns.forEach(o => o.className = 'p-size py-2 px-3 text-[10px] md:text-xs tracking-widest border border-outline-variant/20 hover:border-primary transition-all');
+        b.className = 'p-size py-2 px-3 text-[10px] md:text-xs tracking-widest border border-primary bg-primary text-on-primary';
+        currentSize = b.dataset.size;
+    }));
+
+    // Add to Bag
+    const addBtn = document.getElementById('p-add-btn');
+    if (addBtn && window.MonolithCart) {
+        addBtn.addEventListener('click', () => {
+            MonolithCart.addToCart({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                size: currentSize,
+                category: product.category,
+                image: product.image
+            });
+            const prevText = addBtn.innerHTML;
+            addBtn.innerHTML = '<span class="flex items-center justify-center gap-2">\u2713 Added to Bag</span>';
+            addBtn.classList.replace('bg-primary', 'bg-stone-800');
+            setTimeout(() => {
+                addBtn.innerHTML = prevText;
+                addBtn.classList.replace('bg-stone-800', 'bg-primary');
+            }, 1800);
+        });
+    }
+
+    // Scroll
+    const carousel = document.getElementById('p-related');
+    document.getElementById('p-prev')?.addEventListener('click', () => carousel.scrollBy({ left: -350, behavior: 'smooth' }));
+    document.getElementById('p-next')?.addEventListener('click', () => carousel.scrollBy({ left: 350, behavior: 'smooth' }));
+}
+</script>
+<script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+<script src="luxury_engine.js"></script>
+</body></html>
+
+

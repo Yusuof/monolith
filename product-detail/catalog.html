@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MONOLITH | Collections</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        safelist: ['md:col-span-8', 'md:col-span-4', 'md:col-span-6', 'aspect-[4/5]', 'aspect-[3/4]', 'group-hover:scale-105', 'bg-secondary', 'text-on-secondary', 'opacity-0', 'translate-y-4', 'opacity-100', 'translate-y-0', 'duration-700', 'transition-transform'],
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#0d0f0c","on-error": "#fff7f6","tertiary-fixed": "#e5f9e9",
+              "tertiary-fixed-dim": "#d6eadb","tertiary-container": "#e5f9e9","tertiary": "#516357",
+              "surface-container-low": "#f3f4ee","primary-fixed-dim": "#d6d4d3","background": "#fafaf5",
+              "surface-container": "#ecefe7","surface-tint": "#5f5e5e","on-secondary-fixed-variant": "#705900",
+              "surface-variant": "#dee4da","surface": "#fafaf5","primary-dim": "#535252",
+              "on-tertiary-container": "#4e6054","on-primary-container": "#525151","on-tertiary": "#eafeee",
+              "primary-fixed": "#e4e2e1","on-secondary-fixed": "#4e3d00","inverse-primary": "#ffffff",
+              "on-secondary": "#fff8ef","on-background": "#2e342d","outline": "#767c74",
+              "inverse-on-surface": "#9c9d99","surface-bright": "#fafaf5","outline-variant": "#aeb4aa",
+              "on-primary": "#faf7f6","on-tertiary-fixed-variant": "#586a5e","secondary": "#745c00",
+              "primary-container": "#e4e2e1","error": "#9f403d","secondary-fixed": "#ffe088",
+              "on-surface": "#2e342d","surface-container-high": "#e5eae0","secondary-container": "#ffe088",
+              "on-secondary-container": "#644f00","secondary-fixed-dim": "#f8d056","on-tertiary-fixed": "#3c4e42",
+              "primary": "#5f5e5e","surface-container-highest": "#dee4da","on-error-container": "#752121",
+              "tertiary-dim": "#46574b","on-primary-fixed-variant": "#5c5b5b","surface-dim": "#d5dcd0",
+              "on-primary-fixed": "#3f3f3f","on-surface-variant": "#5b6159","secondary-dim": "#665100",
+              "error-container": "#fe8983","surface-container-lowest": "#ffffff","error-dim": "#4e0309"
+            },
+            fontFamily: { "headline": ["Noto Serif"], "body": ["Inter"], "label": ["Inter"] },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    body { font-family: 'Inter', sans-serif; background-color: #fafaf5; color: #2e342d; }
+    h1, h2, h3, .font-serif { font-family: 'Noto Serif', serif; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .dark body { background-color: #111211 !important; color: #e0e0dc !important; }
+        .dark .bg-surface { background-color: #111211 !important; }
+        .dark .bg-background { background-color: #111211 !important; }
+        .dark .bg-surface-container { background-color: #1a1c1a !important; }
+        .dark .bg-surface-container-low { background-color: #151715 !important; }
+        .dark .bg-surface-container-high { background-color: #1f211f !important; }
+        .dark .text-on-surface { color: #e0e0dc !important; }
+        .dark .text-on-background { color: #e0e0dc !important; }
+        .dark .text-on-surface-variant { color: #a0a59e !important; }
+        .dark .text-primary { color: #c4c3c3 !important; }
+        .dark .border-outline-variant\/20 { border-color: rgba(100,106,98,0.2) !important; }
+    </style>
+<style id="page-transition">body { opacity: 0; } main { transform: translateY(15px); }</style>
+<link rel="stylesheet" href="responsive.css"/>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container selection:text-on-secondary-container overflow-y-scroll dark:bg-[#111211] dark:text-stone-200">
+<!-- TopNavBar (Shared) -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md transition-colors duration-300">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto relative">
+<a class="text-2xl font-semibold tracking-tighter text-stone-800 dark:text-stone-100 uppercase font-headline" href="index.html">MONOLITH</a>
+<div class="hidden md:flex items-center justify-center gap-8 font-noto-serif tracking-tight absolute left-1/2 -translate-x-1/2">
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="index.html">Home</a>
+<a class="text-stone-900 dark:text-white font-medium transition-colors relative" href="catalog.html">Collections</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="story.html">Story</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-stone-800 dark:after:bg-stone-200" href="visit.html">Visit Us</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="theme-toggle material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300">dark_mode</button>
+        <button class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300" data-icon="search">search</button>
+<button class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300" data-icon="shopping_bag">shopping_bag</button>
+<button id="mobile-menu-btn" class="material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity duration-300 md:hidden block" data-icon="menu">menu</button>
+</div>
+</div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-stone-50 dark:bg-stone-950 z-[60] flex flex-col justify-center items-center translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+    <button id="close-menu-btn" class="absolute top-8 right-8 material-symbols-outlined text-stone-600 dark:text-stone-300 hover:opacity-70 transition-opacity text-3xl" data-icon="close">close</button>
+    <div class="flex flex-col items-center gap-10 font-noto-serif text-3xl tracking-widest uppercase">
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="index.html">Home</a>
+        <a class="text-stone-900 dark:text-stone-100 font-medium transition-colors" href="catalog.html">Collections</a>
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="story.html">Story</a>
+        <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="visit.html">Visit Us</a>
+        </div>
+</div>
+
+<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8">
+<header class="mb-20">
+<h1 class="text-5xl md:text-7xl font-headline tracking-tighter mb-8 italic">The Collection</h1>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 border-b border-outline-variant/20 pb-8">
+<div class="flex flex-wrap gap-8">
+<button class="filter-btn text-sm font-medium tracking-[0.1rem] uppercase border-b border-primary pb-1" data-filter="all">All Pieces</button>
+<button class="filter-btn text-sm font-medium tracking-[0.1rem] uppercase text-on-surface-variant hover:text-primary transition-colors" data-filter="new-arrivals">New Arrivals</button>
+<button class="filter-btn text-sm font-medium tracking-[0.1rem] uppercase text-on-surface-variant hover:text-primary transition-colors" data-filter="essentials">Essentials</button>
+<button class="filter-btn text-sm font-medium tracking-[0.1rem] uppercase text-on-surface-variant hover:text-primary transition-colors" data-filter="collaborations">Collaborations</button>
+</div>
+<div class="relative">
+<button id="sort-toggle" class="flex items-center gap-2 text-sm font-medium">
+<span class="text-xs uppercase tracking-widest text-on-surface-variant mr-1">Sort By</span>
+<span id="sort-label">Latest</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">expand_more</span>
+</button>
+<div id="sort-dropdown" class="hidden absolute right-0 top-full mt-2 bg-white dark:bg-stone-900 shadow-xl border border-outline-variant/10 z-30 min-w-[180px]">
+<button class="sort-opt w-full text-left px-5 py-3 text-xs uppercase tracking-widest hover:bg-surface-container transition-colors font-medium" data-sort="latest">Latest</button>
+<button class="sort-opt w-full text-left px-5 py-3 text-xs uppercase tracking-widest hover:bg-surface-container transition-colors" data-sort="price-low">Price: Low → High</button>
+<button class="sort-opt w-full text-left px-5 py-3 text-xs uppercase tracking-widest hover:bg-surface-container transition-colors" data-sort="price-high">Price: High → Low</button>
+<button class="sort-opt w-full text-left px-5 py-3 text-xs uppercase tracking-widest hover:bg-surface-container transition-colors" data-sort="name">Name: A → Z</button>
+</div>
+</div>
+</div>
+</header>
+
+<div id="product-grid" class="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-y-16 md:gap-x-8">
+    <!-- Products rendered by JS -->
+</div>
+
+<p id="no-results" class="hidden text-center py-24 text-on-surface-variant text-lg font-headline italic">No pieces found in this selection.</p>
+</main>
+
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-20 px-12 border-t border-stone-200 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-6">
+<span class="text-lg font-bold text-stone-800 dark:text-stone-200 uppercase font-noto-serif block">MONOLITH</span>
+<p class="font-inter leading-relaxed tracking-wide text-xs uppercase text-stone-600 dark:text-stone-400">© 2026 Monolith Editorial. Crafted Locally.</p>
+</div>
+<div class="flex flex-col gap-4 text-[10px] uppercase tracking-widest text-stone-500">
+<h4 class="text-xs font-bold text-on-surface mb-2">Navigation</h4>
+<a class="hover:text-stone-800 transition-colors" href="index.html">Home</a>
+
+<a class="hover:text-stone-800 transition-colors" href="catalog.html">Collections</a>
+<a class="hover:text-stone-800 transition-colors" href="story.html">Story</a>
+</div>
+<div class="flex flex-col gap-4 text-[10px] uppercase tracking-widest text-stone-500">
+<h4 class="text-xs font-bold text-on-surface mb-2">Legal</h4>
+<a class="hover:text-stone-800 transition-colors" href="#">Privacy</a>
+<a class="hover:text-stone-800 transition-colors" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface mb-2">Manifesto</h4>
+<p class="text-xs leading-loose text-on-surface-variant italic font-light">Dedicated to the pursuit of intentional minimalism and the beauty of local craft.</p>
+
+<form class="mt-8 flex flex-col gap-2 relative group" onsubmit="event.preventDefault(); this.innerHTML = '<p class=\'text-xs uppercase tracking-widest text-primary font-medium\'>Subscribed to the Manifesto.</p>';">
+    <input type="email" placeholder="ENTER EMAIL" required class="bg-transparent border-0 border-b border-stone-300 dark:border-stone-700 text-xs px-0 py-3 focus:border-stone-900 dark:focus:border-stone-300 placeholder-stone-400 uppercase tracking-widest w-full transition-colors" style="box-shadow: none !important; outline: none !important;">
+    <button type="submit" class="absolute right-0 top-3 text-[10px] font-bold uppercase tracking-[0.2em] hover:text-stone-500 transition-colors material-symbols-outlined" style="font-size: 16px;">arrow_forward</button>
+</form>
+
+</div>
+</div>
+</footer>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+    let currentFilter = hashParams.get('filter') || 'all';
+    let currentSort = 'latest';
+    const grid = document.getElementById('product-grid');
+    const noResults = document.getElementById('no-results');
+
+    const spanPatterns = [
+        'md:col-span-8', 'md:col-span-4', 'md:col-span-4', 'md:col-span-4', 'md:col-span-4',
+        'md:col-span-6', 'md:col-span-6', 'md:col-span-8', 'md:col-span-4',
+        'md:col-span-4', 'md:col-span-4', 'md:col-span-4', 'md:col-span-6'
+    ];
+
+    const currentSearch = hashParams.get('search')?.toLowerCase() || '';
+
+    function filterProducts(products) {
+        let filtered = products;
+        
+        // Category/New arrivals filter
+        if (currentFilter === 'new-arrivals') filtered = filtered.filter(p => p.isNew);
+        else if (currentFilter !== 'all') filtered = filtered.filter(p => p.category === currentFilter);
+        
+        // Search filter
+        if (currentSearch) {
+            filtered = filtered.filter(p => 
+                p.name.toLowerCase().includes(currentSearch) || 
+                p.subtitle.toLowerCase().includes(currentSearch) ||
+                p.category.toLowerCase().includes(currentSearch)
+            );
+            // Update UI to show search term
+            const h1 = document.querySelector('h1');
+            if (h1) h1.innerHTML = `Search: <span class="italic">"${hashParams.get('search')}"</span>`;
+        }
+        
+        return filtered;
+    }
+
+    function sortProducts(products) {
+        const sorted = [...products];
+        switch (currentSort) {
+            case 'price-low':  return sorted.sort((a, b) => a.price - b.price);
+            case 'price-high': return sorted.sort((a, b) => b.price - a.price);
+            case 'name':       return sorted.sort((a, b) => a.name.localeCompare(b.name));
+            case 'latest':
+            default:           return sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+    }
+
+    function renderGrid() {
+        const filtered = sortProducts(filterProducts(PRODUCTS));
+        grid.innerHTML = '';
+        if (filtered.length === 0) { noResults.classList.remove('hidden'); return; }
+        noResults.classList.add('hidden');
+
+        filtered.forEach((product, i) => {
+            const span = spanPatterns[i % spanPatterns.length];
+            const isLarge = span === 'md:col-span-8';
+            const card = document.createElement('a');
+            card.href = `product.html#id=${product.id}`;
+            card.className = `${span} group cursor-pointer block opacity-0 translate-y-4 transition-all duration-700`;
+            card.style.transitionDelay = `${i * 0.05}s`;
+
+            card.innerHTML = `
+                <div class="aspect-[${isLarge ? '4/5' : '3/4'}] overflow-hidden bg-surface-container mb-2 md:mb-6 relative">
+                    <img alt="${product.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="${product.image}"/>
+                    ${product.isNew ? `<div class="absolute top-2 left-2 md:top-6 md:left-6"><span class="bg-secondary text-on-secondary px-1.5 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] uppercase tracking-wider md:tracking-[0.2rem] font-medium">New</span></div>` : ''}
+                    ${product.tag ? `<div class="absolute top-2 right-2 md:top-6 md:right-6"><span class="bg-primary text-on-primary px-1.5 py-0.5 md:px-3 md:py-1 text-[7px] md:text-[10px] uppercase tracking-wider md:tracking-[0.2rem] font-medium">${product.tag}</span></div>` : ''}
+                </div>
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-0.5 md:gap-2">
+                    <div>
+                        <h3 class="font-headline italic text-sm md:${isLarge ? 'text-2xl' : 'text-xl'} mb-0.5 md:mb-1 leading-tight">${product.name}</h3>
+                        <p class="text-[8px] md:text-[10px] text-on-surface-variant uppercase tracking-widest">${product.subtitle}</p>
+                    </div>
+                    <p class="text-xs md:text-${isLarge ? 'lg' : 'base'} font-light text-primary">\$${product.price.toFixed(2)}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+            requestAnimationFrame(() => { card.classList.remove('opacity-0', 'translate-y-4'); card.classList.add('opacity-100', 'translate-y-0'); });
+        });
+    }
+
+    // Filter UI sync
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.dataset.filter === currentFilter) {
+            btn.className = 'filter-btn text-sm font-medium tracking-[0.1rem] uppercase border-b border-primary pb-1';
+        }
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.className = 'filter-btn text-sm font-medium tracking-[0.1rem] uppercase text-on-surface-variant hover:text-primary transition-colors');
+            btn.className = 'filter-btn text-sm font-medium tracking-[0.1rem] uppercase border-b border-primary pb-1';
+            currentFilter = btn.dataset.filter;
+            renderGrid();
+        });
+    });
+
+    const sortToggle = document.getElementById('sort-toggle');
+    const sortDropdown = document.getElementById('sort-dropdown');
+    const sortLabel = document.getElementById('sort-label');
+
+    sortToggle.addEventListener('click', (e) => { e.stopPropagation(); sortDropdown.classList.toggle('hidden'); });
+    document.addEventListener('click', () => sortDropdown.classList.add('hidden'));
+
+    document.querySelectorAll('.sort-opt').forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll('.sort-opt').forEach(o => o.classList.remove('font-medium'));
+            opt.classList.add('font-medium');
+            currentSort = opt.dataset.sort;
+            sortLabel.textContent = opt.textContent;
+            renderGrid();
+        });
+    });
+
+    renderGrid();
+});
+</script>
+<script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+<script src="luxury_engine.js"></script>
+</body></html>
