@@ -233,59 +233,6 @@
     <a href="index.html" class="text-xs font-bold tracking-[0.2em] uppercase border-b border-primary pb-1 hover:text-stone-500 transition-colors">Return Home</a>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Render Checkout Items
-    const container = document.getElementById('checkout-cart-items');
-    const subElement = document.getElementById('checkout-subtotal');
-    const totElement = document.getElementById('checkout-total');
-    
-    let cart = [];
-    try { cart = JSON.parse(localStorage.getItem('monolith_cart')) || []; } catch(e) {}
-    
-    if (cart.length === 0) {
-        container.innerHTML = '<p class="text-xs text-on-surface-variant font-light italic">Your cart is empty.</p>';
-    } else {
-        let orderTotal = 0;
-        cart.forEach(item => {
-            orderTotal += (item.price * item.quantity);
-            const row = document.createElement('div');
-            row.className = 'flex gap-4 items-center';
-            row.innerHTML = `
-                <div class="h-20 w-16 bg-stone-100 dark:bg-stone-900 shrink-0">
-                    <img src="${item.image}" class="w-full h-full object-cover">
-                </div>
-                <div class="flex-1 flex flex-col">
-                    <span class="text-xs font-bold uppercase tracking-widest text-on-surface">${item.name}</span>
-                    <span class="text-[10px] uppercase text-on-surface-variant tracking-wider mt-1">Size ${item.size} — Qty ${item.quantity}</span>
-                </div>
-                <span class="text-xs font-medium tracking-widest">$${item.price}.00</span>
-            `;
-            container.appendChild(row);
-        });
-        subElement.innerText = `$${orderTotal}.00`;
-        totElement.innerText = `$${orderTotal}.00`;
-    }
-
-    // Checkout Form Submit
-    document.getElementById('checkout-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (cart.length === 0) return alert('Your cart is empty!');
-
-        // Clear cart
-        localStorage.removeItem('monolith_cart');
-        
-        // Show success
-        const overlay = document.getElementById('success-overlay');
-        overlay.classList.remove('pointer-events-none');
-        overlay.style.opacity = '1';
-        
-        // Trigger global cart update event if app.js is listening
-        window.dispatchEvent(new Event('storage'));
-    });
-});
-</script>
-
 <!-- Footer -->
 <footer class="bg-stone-100 dark:bg-stone-950 w-full py-20 px-12 tonal-shift">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
@@ -324,8 +271,62 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 </footer>
+
 <script src="products.js"></script>
 <script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Render Checkout Items
+    const container = document.getElementById('checkout-cart-items');
+    const subElement = document.getElementById('checkout-subtotal');
+    const totElement = document.getElementById('checkout-total');
+    
+    let cart = [];
+    try { cart = JSON.parse(localStorage.getItem('monolith_cart')) || []; } catch(e) {}
+    
+    if (cart.length === 0) {
+        container.innerHTML = '<p class="text-xs text-on-surface-variant font-light italic">Your cart is empty.</p>';
+    } else {
+        let orderTotal = 0;
+        cart.forEach(item => {
+            orderTotal += (item.price * (item.quantity || 1));
+            const row = document.createElement('div');
+            row.className = 'flex gap-4 items-center';
+            row.innerHTML = `
+                <div class="h-20 w-16 bg-stone-100 dark:bg-stone-900 shrink-0">
+                    <img src="${item.image}" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 flex flex-col">
+                    <span class="text-xs font-bold uppercase tracking-widest text-on-surface">${item.name}</span>
+                    <span class="text-[10px] uppercase text-on-surface-variant tracking-wider mt-1">Size ${item.size || '—'} — Qty ${item.quantity || 1}</span>
+                </div>
+                <span class="text-xs font-medium tracking-widest">$${parseFloat(item.price).toFixed(2)}</span>
+            `;
+            container.appendChild(row);
+        });
+        subElement.innerText = `$${orderTotal.toFixed(2)}`;
+        totElement.innerText = `$${orderTotal.toFixed(2)}`;
+    }
+
+    // Checkout Form Submit
+    document.getElementById('checkout-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (cart.length === 0) return alert('Your cart is empty!');
+
+        // Clear cart
+        localStorage.removeItem('monolith_cart');
+        
+        // Show success
+        const overlay = document.getElementById('success-overlay');
+        overlay.classList.remove('pointer-events-none');
+        overlay.style.opacity = '1';
+        
+        // Update badge
+        if (window.MonolithCart) window.MonolithCart.getCartCount();
+        window.dispatchEvent(new Event('storage'));
+    });
+});
+</script>
 <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
 <script src="luxury_engine.js"></script>
 </body></html>

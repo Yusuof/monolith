@@ -33,52 +33,207 @@ img, video, svg {
 
 /* ---- Mobile: Up to 639px ---- */
 @media (max-width: 639px) {
-    /* Hero headline scales down gracefully */
+    /* --- NAV BAR --- */
+    nav.fixed > div {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    nav.fixed a.font-headline {
+        font-size: 1.1rem !important;
+    }
+    nav .flex.items-center.gap-6 {
+        gap: 0.75rem !important;
+    }
+    nav .material-symbols-outlined {
+        font-size: 22px !important;
+    }
+
+    /* --- HERO --- */
     .hero-headline, h1 {
-        font-size: clamp(2rem, 8vw, 3.5rem) !important;
+        font-size: clamp(1.8rem, 7vw, 3rem) !important;
         line-height: 1.15 !important;
     }
+    section.relative.h-screen {
+        min-height: 85vh !important;
+    }
+    section.relative.h-screen .relative.z-10 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+    section.relative.h-screen .relative.z-10 a {
+        padding: 0.875rem 1.5rem !important;
+        font-size: 0.65rem !important;
+    }
 
-    /* Footer: stack into 2 columns instead of 1 */
+    /* --- GENERAL PAGE CONTENT --- */
+    main {
+        padding-top: 5rem !important;
+    }
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* --- "THE COLLECTION" HEADING --- */
+    .font-headline {
+        word-break: break-word;
+    }
+    h2.text-6xl, h2.md\:text-\[10rem\] {
+        font-size: clamp(2rem, 10vw, 3.5rem) !important;
+        line-height: 1.1 !important;
+    }
+
+    /* --- SECTION SPACING --- */
+    .py-32 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+    .py-40 { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+    .py-48 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+    .mb-16 { margin-bottom: 2rem !important; }
+    .mb-20 { margin-bottom: 2.5rem !important; }
+
+    /* --- BRAND HIGHLIGHT SECTION --- */
+    .lg\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    /* Hide overlapping image on mobile */
+    .absolute.-bottom-10.-right-10,
+    div[class*="absolute"][class*="-bottom-10"][class*="-right-10"] {
+        display: none !important;
+    }
+
+    /* --- NEWSLETTER --- */
+    .max-w-3xl { max-width: 100% !important; }
+
+    /* --- FOOTER --- */
+    footer {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
     footer .grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 2rem !important;
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
+        gap: 1.5rem !important;
     }
-    footer .md\:col-span-1:first-child {
+    footer .md\:col-span-1:first-child,
+    footer > div > div:first-child {
         grid-column: span 2 !important;
     }
-
-    /* Footer bottom bar: stack on tiny screens */
     footer > div:last-child {
         flex-direction: column !important;
         gap: 1rem !important;
         text-align: center !important;
     }
 
-    /* Reduce section padding on mobile */
-    section {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+    /* --- CART PAGE --- */
+    #cart-content {
+        grid-template-columns: 1fr !important;
+    }
+    #cart-content > div:first-child {
+        order: 1 !important;
+    }
+    #cart-content > div:last-child {
+        order: 2 !important;
+        position: static !important;
+    }
+    #cart-list .grid {
+        grid-template-columns: 1fr !important;
+    }
+    #cart-list .col-span-6 {
+        grid-column: span 1 !important;
+    }
+    #cart-list .col-span-2 {
+        grid-column: span 1 !important;
+    }
+    #cart-list img {
+        width: 4.5rem !important;
+        height: 5rem !important;
     }
 
-    /* Prevent "The Collection" from being too huge */
-    .font-headline {
-        word-break: break-word;
+    /* --- CHECKOUT PAGE --- */
+    .lg\:grid-cols-12 {
+        grid-template-columns: 1fr !important;
+    }
+    .lg\:col-span-5,
+    .lg\:col-span-7 {
+        grid-column: span 1 !important;
+    }
+    .grid.grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    .grid.grid-cols-2 input.col-span-2 {
+        grid-column: span 1 !important;
+    }
+    #checkout-form input {
+        font-size: 0.75rem !important;
+        padding-top: 0.875rem !important;
+        padding-bottom: 0.875rem !important;
+    }
+    #checkout-form button[type="submit"] {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        font-size: 0.75rem !important;
     }
 
-    /* Tighten spacing between sections */
-    .py-32 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
-    .py-40 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+    /* --- CATALOG PAGE --- */
+    #product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.625rem !important;
+    }
+    /* First product card spans full width for editorial impact */
+    #product-grid > a:first-child {
+        grid-column: span 2 !important;
+    }
+    #product-grid > a:not(:first-child) {
+        grid-column: span 1 !important;
+    }
+    /* Taller image aspect ratio on mobile for premium feel */
+    #product-grid .aspect-\[4\/5\],
+    #product-grid .aspect-\[3\/4\],
+    #product-grid div[class*="aspect-"] {
+        aspect-ratio: 3 / 4 !important;
+    }
+    /* First card gets a wider cinematic ratio */
+    #product-grid > a:first-child div[class*="aspect-"] {
+        aspect-ratio: 4 / 5 !important;
+    }
+    #product-grid h3 {
+        font-size: 0.7rem !important;
+        line-height: 1.3 !important;
+    }
+    #product-grid p {
+        font-size: 0.6rem !important;
+    }
+    /* Price styling on mobile */
+    #product-grid .text-primary {
+        font-size: 0.65rem !important;
+    }
+    /* Better badge sizing */
+    #product-grid span[class*="bg-secondary"],
+    #product-grid span[class*="bg-primary"] {
+        padding: 0.15rem 0.4rem !important;
+        font-size: 6px !important;
+    }
 
-    /* Newsletter section: full width */
-    .max-w-3xl { max-width: 100% !important; }
+    /* --- CATALOG HEADER: stack filters --- */
+    header .flex.flex-wrap {
+        gap: 0.75rem !important;
+    }
+    header .filter-btn {
+        font-size: 0.65rem !important;
+    }
 
-    /* Visit page hero: responsive height */
+    /* --- VISIT PAGE HERO --- */
     section[class*="h-[618px]"] {
         height: 50vh !important;
         min-height: 300px !important;
+    }
+
+    /* --- MOBILE MENU --- */
+    #mobile-menu .flex.flex-col {
+        gap: 2rem !important;
+    }
+    #mobile-menu a {
+        font-size: 1.5rem !important;
     }
 }
 
@@ -122,6 +277,15 @@ img, video, svg {
     }
     .md\:grid-cols-4 {
         grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Checkout: full width on tablets */
+    .lg\:grid-cols-12 {
+        grid-template-columns: 1fr !important;
+    }
+    .lg\:col-span-5,
+    .lg\:col-span-7 {
+        grid-column: span 1 !important;
     }
 }
 
@@ -195,3 +359,4 @@ h2 { font-size: clamp(1.5rem, 3vw + 0.5rem, 4rem); }
         object-fit: cover;
     }
 }
+
