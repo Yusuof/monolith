@@ -221,7 +221,7 @@
 
         // Apply initial state
         const storedTheme = localStorage.getItem('monolith_theme');
-        if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (storedTheme === 'dark') {
             h.classList.add('dark');
             h.classList.remove('light');
             toggles.forEach(t => t.innerText = 'light_mode');
