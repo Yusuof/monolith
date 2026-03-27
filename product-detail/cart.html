@@ -163,6 +163,7 @@
 </div>
 </footer>
 
+<script src="products.js"></script>
 <script src="app.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -172,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderCart() {
     const cart = MonolithCart.getCart();
     const emptyEl = document.getElementById('cart-empty');
-    const itemsEl = document.getElementById('cart-items');
+    const itemsEl = document.getElementById('cart-content');
     const listEl = document.getElementById('cart-list');
     const subtotalEl = document.getElementById('cart-subtotal');
     const countText = document.getElementById('cart-count-text');
